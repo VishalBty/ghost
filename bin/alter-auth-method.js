@@ -14,6 +14,10 @@ var mysql = require("mysql2");
 alterAuthenticationMethod();
 
 function alterAuthenticationMethod() {
+  if (!process.env.MYSQL_URL) {
+    console.log("No MYSQL_URL found, skipping authentication method change");
+    return;
+  }
   var connection = mysql.createConnection(process.env.MYSQL_URL);
   connection.query(
     "ALTER USER `root`@`%` IDENTIFIED WITH mysql_native_password BY ?",

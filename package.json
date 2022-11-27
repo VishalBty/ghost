@@ -6,17 +6,18 @@
   "author": "farazpatankar",
   "license": "MIT",
   "engines": {
-    "node": "16.X || 14.X " 
+    "node": "16.X || 14.X "
   },
   "dependencies": {
     "casper": "github:TryGhost/Casper#main",
     "ghost": "4.47.4",
     "ghost-storage-cloudinary": "2.2.1",
     "lyra": "github:TryGhost/lyra#main",
-    "mysql2": "2.3.3"
+    "mysql2": "2.3.3",
+    "headline": "github:TryGhost/headline#main"
   },
   "scripts": {
-    "start": "bin/create-config && node index.js",
-    "postinstall": "bin/alter-auth-method && bash bin/cloudinary.sh && bash bin/themes.sh"
+    "start": "bin/create-config.js && node index.js",
+    "postinstall": "bin/alter-auth-method.js && bash bin/cloudinary.sh && bash bin/themes.sh"
   }
 }
