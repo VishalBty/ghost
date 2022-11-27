@@ -14,7 +14,7 @@
     "ghost-storage-cloudinary": "2.2.1",
     "lyra": "github:TryGhost/lyra#main",
     "mysql2": "2.3.3",
-    "headline": "github:TryGhost/headline#main"
+    "ruby": "github:TryGhost/ruby#main"
   },
   "scripts": {
     "start": "bin/create-config.js && node index.js",
