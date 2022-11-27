@@ -34,6 +34,28 @@ function createConfig() {
         },
       },
     };
+  } else if (process.env.S3_ACCESS_KEY_ID) {
+    console.log("S3_ACCESS_KEY_ID found, setting storage to s3");
+    fileStorage = true;
+
+    storage = {
+      active: "s3",
+      s3: {
+        accessKeyId: process.env.S3_ACCESS_KEY_ID,
+        secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+        region: process.env.S3_REGION || "us-east-1",
+        bucket: process.env.S3_BUCKET || "ghost-blog-images",
+        assetHost: process.env.S3_ASSET_HOST,
+        signatureVersion: process.env.S3_SIGNATURE_VERSION,
+        pathPrefix: process.env.S3_PATH_PREFIX,
+        endpoint: process.env.S3_ENDPOINT,
+        serverSideEncryption: process.env.S3_SERVER_SIDE_ENCRYPTION,
+        forcePathStyle: process.env.S3_FORCE_PATH_STYLE,
+        forcePathStyle: true,
+
+        acl: process.env.S3_ACL,
+      },
+    };
   } else {
     console.log("CLOUDINARY_URL not found, setting storage to false");
     fileStorage = false;
