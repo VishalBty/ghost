@@ -1,6 +1,7 @@
 themes=(
 	casper
 	lyra
+	ruby
 )
 
 mkdir -p content/themes/
