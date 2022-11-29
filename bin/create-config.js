@@ -86,7 +86,13 @@ function createConfig() {
     storage: storage,
     database: {
       client: "mysql",
-      connection: process.env.MYSQL_URL,
+      connection: process.env.MYSQL_URL || {
+        host: process.env.MYSQLHOST,
+        port: process.env.MYSQLPORT,
+        user: process.env.MYSQLUSER,
+        password: process.env.MYSQLPASSWORD,
+        database: process.env.MYSQLDATABASE,
+      },
       pool: { min: 0, max: 5 },
       debug: false,
     },
