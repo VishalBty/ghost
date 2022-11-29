@@ -10,6 +10,8 @@ var path = require("path");
 
 var appRoot = path.join(__dirname, "..");
 var contentPath = path.join(appRoot, "/content/");
+
+require("dotenv").config();
 function createConfig() {
   var fileStorage, storage;
 
@@ -57,7 +59,7 @@ function createConfig() {
       },
     };
   } else {
-    console.log("CLOUDINARY_URL not found, setting storage to false");
+    console.log("S3 OR CLOUDINARY_URL not found, setting storage to false");
     fileStorage = false;
     storage = {};
   }
@@ -84,13 +86,7 @@ function createConfig() {
     storage: storage,
     database: {
       client: "mysql",
-      connection: {
-        host: process.env.MYSQLHOST,
-        port: process.env.MYSQLPORT,
-        user: process.env.MYSQLUSER,
-        password: process.env.MYSQLPASSWORD,
-        database: process.env.MYSQLDATABASE,
-      },
+      connection: process.env.MYSQL_URL,
       pool: { min: 0, max: 5 },
       debug: false,
     },
@@ -102,7 +98,7 @@ function createConfig() {
       contentPath: contentPath,
     },
   };
-
+  console.log(config);
   return config;
 }
 

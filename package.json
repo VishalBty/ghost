@@ -10,15 +10,17 @@
   },
   "dependencies": {
     "casper": "github:TryGhost/Casper#main",
+    "dotenv": "^16.0.3",
     "ghost": "4.47.4",
     "ghost-storage-adapter-s3": "^2.8.0",
     "ghost-storage-cloudinary": "2.2.1",
     "lyra": "github:TryGhost/lyra#main",
     "mysql2": "2.3.3",
-    "ruby": "github:TryGhost/ruby#main"
+    "ruby": "github:TryGhost/ruby#main",
+    "sqlite3": "^5.1.2"
   },
   "scripts": {
-    "start": "bin/create-config.js && node index.js",
+    "start": "NODE_ENV=production && bin/create-config.js && node index.js --production",
     "postinstall": "bin/alter-auth-method.js && bash bin/cloudinary.sh && bash bin/themes.sh"
   }
 }

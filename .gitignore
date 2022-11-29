@@ -2,3 +2,4 @@ node_modules/
 .DS_Store
 content
 .env
+config.production.json

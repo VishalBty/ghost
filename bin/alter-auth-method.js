@@ -11,11 +11,19 @@
 
 var mysql = require("mysql2");
 
+require("dotenv").config();
+
 alterAuthenticationMethod();
 
 function alterAuthenticationMethod() {
   if (!process.env.MYSQL_URL) {
     console.log("No MYSQL_URL found, skipping authentication method change");
+    return;
+  }
+  if (!process.env.MYSQLPASSWORD) {
+    console.log(
+      "MYSQL PASSWORD not found, skipping authentication method change"
+    );
     return;
   }
   var connection = mysql.createConnection(process.env.MYSQL_URL);
