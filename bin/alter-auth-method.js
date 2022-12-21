@@ -14,7 +14,7 @@ var mysql = require("mysql2");
 require("dotenv").config();
 
 alterAuthenticationMethod();
-
+console.log("minor change");
 function alterAuthenticationMethod() {
   if (!process.env.MYSQL_URL) {
     console.log("No MYSQL_URL found, skipping authentication method change");
