@@ -13,7 +13,7 @@ var mysql = require("mysql2");
 
 require("dotenv").config();
 
-alterAuthenticationMethod();
+// alterAuthenticationMethod();
 console.log("minor change");
 function alterAuthenticationMethod() {
   if (!process.env.MYSQL_URL) {
