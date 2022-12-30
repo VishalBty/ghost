@@ -14,7 +14,7 @@ var contentPath = path.join(appRoot, "/content/");
 require("dotenv").config();
 function createConfig() {
   var fileStorage, storage;
-
+  console.log(process.env);
   if (process.env.CLOUDINARY_URL) {
     console.log("CLOUDINARY_URL found, setting storage to cloudinary");
     fileStorage = true;
