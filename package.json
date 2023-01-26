@@ -17,7 +17,8 @@
     "lyra": "github:TryGhost/lyra#main",
     "mysql2": "2.3.3",
     "ruby": "github:TryGhost/ruby#main",
-    "sqlite3": "^5.1.2"
+    "sqlite3": "^5.1.2",
+    "liebling": "github:eddiesigner/liebling#master"
   },
   "scripts": {
     "start": "NODE_ENV=production && bin/create-config.js && node index.js --production",

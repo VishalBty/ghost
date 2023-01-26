@@ -2,6 +2,7 @@ themes=(
 	casper
 	lyra
 	ruby
+	liebling
 )
 
 mkdir -p content/themes/
