@@ -3,6 +3,7 @@ themes=(
 	lyra
 	ruby
 	liebling
+	ease
 )
 
 mkdir -p content/themes/
