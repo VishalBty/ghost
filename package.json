@@ -19,9 +19,7 @@
     "ruby": "github:TryGhost/ruby#main",
     "sqlite3": "^5.1.2",
     "liebling": "github:eddiesigner/liebling#master",
-    "ease": "github:TryGhost/ease#main",
-
-
+    "ease": "github:TryGhost/ease#main"
   },
   "scripts": {
     "start": "NODE_ENV=production && bin/create-config.js && node index.js --production",
