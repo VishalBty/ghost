@@ -19,7 +19,8 @@
     "ruby": "github:TryGhost/ruby#main",
     "sqlite3": "^5.1.2",
     "liebling": "github:eddiesigner/liebling#master",
-    "ease": "github:eddiesigner/ease#master"
+    "ease": "github:TryGhost/ease#main",
+
 
   },
   "scripts": {
